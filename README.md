@@ -8,7 +8,7 @@ To access the source data:
  2.) Scroll down to the dropdown and then and select a year. Download will begin.
 
 
-![alt text](/rtxanson/minneapolis-health-birth-statistics/raw/master/README.png "Sample map")
+![alt text](//raw.githubusercontent.com/rtxanson/minneapolis-health-birth-statistics/master/README.png "Sample map")
 
 [See a sample map](http://goo.gl/yCJ7Sb) highlighting adequacy of care during pregnancy, by neighborhood.
 
