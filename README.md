@@ -1,4 +1,4 @@
-# minneapolis-health-birth-statistics
+# Minneapolis Birth Statistics
 
 This is liberated data from the [Minneapolis Health Department reports][mhd], previously available only in almost machine readable PDF format.
 
@@ -11,8 +11,7 @@ To access the source data:
 
 ![Sample map](https://raw.githubusercontent.com/rtxanson/minneapolis-health-birth-statistics/master/README.png "Sample map")
 
-[See a sample map](http://goo.gl/yCJ7Sb) highlighting adequacy of care during pregnancy, by neighborhood.
-
+[See a sample map](http://goo.gl/yCJ7Sb) on highlighting adequacy of care during pregnancy, by neighborhood. Be sure to click the neighborhoods for an infobox containing more data.
 
 ## Cleanup
 
