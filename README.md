@@ -19,8 +19,7 @@ To access the source data:
 
     pdftotext -enc UTF-8 -table path/to/ugly.pdf
 
-2. I wrote a scary script to extract the data. I'll share the code if I clean
-it up.
+2. I wrote a parser for the text data, in `parser/births/`
 
 3. Imported the data into ~~Exc~~ Google ~~Do~~ Drive Spreadsheet, and
     connected it with a city neighborhood dataset to clean up the neighborhood
