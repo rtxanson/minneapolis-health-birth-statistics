@@ -18,7 +18,6 @@ parser/births/dist/build/Births/births:
 
 parser: parser/births/dist/build/Births/births
 
-
 .PHONY: init
 init:
 	@-mkdir -p csvs
@@ -28,7 +27,6 @@ done:
 	@echo
 	@echo "Don't check in the stuff in csvs/ because it needs some manual processing."
 	@echo
-
 
 .PHONY: all
 all: init \

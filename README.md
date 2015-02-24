@@ -15,6 +15,8 @@ To access the source data:
 
 ## Cleanup
 
+This is sort of documented by way of the `Makefile`.
+
 1. [pdftotext][pdftotext] - to extract the text 
 
     pdftotext -enc UTF-8 -table path/to/ugly.pdf
