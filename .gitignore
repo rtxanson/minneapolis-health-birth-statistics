@@ -1,0 +1,6 @@
+pdfs/*.txt
+csvs/*.csv
+*cabal-sandbox*
+*sandbox*
+**/dist/*
+*.sw*
