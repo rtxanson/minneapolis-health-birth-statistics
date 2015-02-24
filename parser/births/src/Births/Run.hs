@@ -24,7 +24,7 @@ import qualified Data.ByteString.Lazy.Char8 as BS
 
 import qualified Data.Text as T
 
-(<~) = getRow
+(^~) = getRow
 
 -- TODO:
 -- community_set 
@@ -44,42 +44,42 @@ pageToNhoodRecord p = NeighborhoodRecord { nhoodName = nhoodname
     table_data = tableData chunkedpage
     header_data = tableHeader chunkedpage
 
-    total_births = nhood_set $ table_data <~ "TOTAL BIRTHS"
+    total_births = nhood_set $ table_data ^~ "TOTAL BIRTHS"
 
     -- The neighborhood name is weird: it wraps over several lines, so, voodoo
     nhoodname = T.intercalate " " [okay | okay <- [(h !! 0) | h <- header_data]
                                         , T.unpack okay `notElem` ["NEIGHBORHOOD", "NUMBER"]
                                         ]
 
-    row_mother_wht = nhood_set $ table_data <~ "WHITE NON-HISPANIC"
-    row_mother_blk = nhood_set $ table_data <~ "BLACK NON-HISPANIC"
-    row_mother_ami = nhood_set $ table_data <~ "AMERICAN INDIAN"
-    row_mother_pcf = nhood_set $ table_data <~ "ASIAN/PACIFIC ISLANDER"
-    row_mother_hsp = nhood_set $ table_data <~ "HISPANIC"
+    row_mother_wht = nhood_set $ table_data ^~ "WHITE NON-HISPANIC"
+    row_mother_blk = nhood_set $ table_data ^~ "BLACK NON-HISPANIC"
+    row_mother_ami = nhood_set $ table_data ^~ "AMERICAN INDIAN"
+    row_mother_pcf = nhood_set $ table_data ^~ "ASIAN/PACIFIC ISLANDER"
+    row_mother_hsp = nhood_set $ table_data ^~ "HISPANIC"
 
-    row_married    = nhood_set $ table_data <~ "MARRIED"
-    row_unmarried  = nhood_set $ table_data <~ "UNMARRIED"
+    row_married    = nhood_set $ table_data ^~ "MARRIED"
+    row_unmarried  = nhood_set $ table_data ^~ "UNMARRIED"
 
-    row_18         = nhood_set $ table_data <~ "UNDER 18"
-    row_18_19      = nhood_set $ table_data <~ "18 - 19"
-    row_20_34      = nhood_set $ table_data <~ "20 - 34"
-    row_35_plus    = nhood_set $ table_data <~ "35 AND OVER"
+    row_18         = nhood_set $ table_data ^~ "UNDER 18"
+    row_18_19      = nhood_set $ table_data ^~ "18 - 19"
+    row_20_34      = nhood_set $ table_data ^~ "20 - 34"
+    row_35_plus    = nhood_set $ table_data ^~ "35 AND OVER"
 
-    less_than_hs   = nhood_set $ table_data <~ "LESS THAN HIGH SCHOOL"
-    hs_grad        = nhood_set $ table_data <~ "HIGH SCHOOL GRAD"
-    more_than_hs   = nhood_set $ table_data <~ "MORE THAN HIGH SCHOOL"
+    less_than_hs   = nhood_set $ table_data ^~ "LESS THAN HIGH SCHOOL"
+    hs_grad        = nhood_set $ table_data ^~ "HIGH SCHOOL GRAD"
+    more_than_hs   = nhood_set $ table_data ^~ "MORE THAN HIGH SCHOOL"
 
-    gestation_length_u_37     = nhood_set $ table_data <~ "UNDER 37 WEEKS"
-    gestation_length_o_37     = nhood_set $ table_data <~ "37 OR MORE WEEKS"
-    birth_weight_u_2500       = nhood_set $ table_data <~ "2500 + GRAMS"
-    birth_weight_o_2500       = nhood_set $ table_data <~ "UNDER 2500 GRAMS"
-    trimester_care_1st        = nhood_set $ table_data <~ "1st TRIMESTER"
-    trimester_care_2nd        = nhood_set $ table_data <~ "2nd TRIMESTER"
-    trimester_care_3rd        = nhood_set $ table_data <~ "3rd TRIMESTER"
-    trimester_care_none       = nhood_set $ table_data <~ "NO CARE"
-    adequacy_adequate         = nhood_set $ table_data <~ "ADEQUATE"
-    adequacy_intermed         = nhood_set $ table_data <~ "INTERMEDIATE"
-    adequacy_inadequate       = nhood_set $ table_data <~ "INADEQUATE"
+    gestation_length_u_37     = nhood_set $ table_data ^~ "UNDER 37 WEEKS"
+    gestation_length_o_37     = nhood_set $ table_data ^~ "37 OR MORE WEEKS"
+    birth_weight_u_2500       = nhood_set $ table_data ^~ "2500 + GRAMS"
+    birth_weight_o_2500       = nhood_set $ table_data ^~ "UNDER 2500 GRAMS"
+    trimester_care_1st        = nhood_set $ table_data ^~ "1st TRIMESTER"
+    trimester_care_2nd        = nhood_set $ table_data ^~ "2nd TRIMESTER"
+    trimester_care_3rd        = nhood_set $ table_data ^~ "3rd TRIMESTER"
+    trimester_care_none       = nhood_set $ table_data ^~ "NO CARE"
+    adequacy_adequate         = nhood_set $ table_data ^~ "ADEQUATE"
+    adequacy_intermed         = nhood_set $ table_data ^~ "INTERMEDIATE"
+    adequacy_inadequate       = nhood_set $ table_data ^~ "INADEQUATE"
 
     pregnancystats = PregnancyStats {
         gestationUnder37WksAmt        = fst gestation_length_u_37

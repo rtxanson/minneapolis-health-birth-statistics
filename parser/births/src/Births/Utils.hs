@@ -35,11 +35,15 @@ seekRowContains :: T.Text -> [[T.Text]] -> [T.Text]
 seekRowContains text rows = row
   where row = [r | r <- rows, text `T.isInfixOf` T.intercalate " " r] !! 0
 
--- | get a row containing a text string
+seekRowBegins :: T.Text -> [[T.Text]] -> [T.Text]
+seekRowBegins text rows = row
+  where row = [r | r <- rows, text `T.isPrefixOf` T.intercalate " " r] !! 0
+
+-- | get a row beginning on a text string
 getRow :: [[T.Text]] -> T.Text -> [T.Text]
 getRow rows query = row
   where
-    row = drop query_length $ (query `seekRowContains` rows)
+    row = drop query_length $ (query `seekRowBegins` rows)
     query_length = length $ T.splitOn (T.pack " ") query
 
 -- | Split pages on line feed
