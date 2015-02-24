@@ -38,6 +38,12 @@ documentation. If something is unclear, refer to original PDFs.
 The "Unknown" neighborhood is not a surprise conspiracy neighborhood that no
 one knows about, it is neighborhoods listed as unknown in the survey.
 
+### Specific file notes
+
+* `2006-2008.csv` - Does not contain Unknown data, and Mid-City Industrial neighborhood is not present
+
+## TODOs
+
 There is still more data to release from the PDFs:
 
  * Community data
